@@ -3,12 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <script type="text/javascript">
-      // Check if coming from a direct navigation to a route like /predict
-      if (!location.pathname.includes("/AcademiPredict/index.html") && location.pathname !== "/AcademiPredict/") {
-        const redirectPath = location.pathname + location.search + location.hash;
-        sessionStorage.setItem("redirect", redirectPath);
-        location.replace("/AcademiPredict/");
-      }
+      const redirectPath = sessionStorage.getItem("redirect") || "/";
+      sessionStorage.removeItem("redirect");
+      location.replace(redirectPath);
     </script>
   </head>
   <body></body>
