@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <script type="text/javascript">
-      // Redirect all routes to the index.html
-      const redirectTo = sessionStorage.redirect || "/";
-      sessionStorage.removeItem("redirect");
-      location.replace(location.origin + "/AcademiPredict" + redirectTo.replace(location.origin, ""));
+      // Check if coming from a direct navigation to a route like /predict
+      if (!location.pathname.includes("/AcademiPredict/index.html") && location.pathname !== "/AcademiPredict/") {
+        const redirectPath = location.pathname + location.search + location.hash;
+        sessionStorage.setItem("redirect", redirectPath);
+        location.replace("/AcademiPredict/");
+      }
     </script>
   </head>
   <body></body>
