@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script type="text/javascript">
+      // Redirect all routes to the index.html
+      const redirectTo = sessionStorage.redirect || "/";
+      sessionStorage.removeItem("redirect");
+      location.replace(location.origin + "/AcademiPredict" + redirectTo.replace(location.origin, ""));
+    </script>
+  </head>
+  <body></body>
+</html>
