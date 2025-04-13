@@ -20,7 +20,7 @@
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+         <BrowserRouter basename="/AcademiPredict">
           <Navbar />
           <Routes>
             <Route path="/" element={<Index />} />
